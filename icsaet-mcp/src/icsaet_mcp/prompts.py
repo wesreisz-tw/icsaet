@@ -117,3 +117,61 @@ def question_formatting() -> str:
     """Provide guidance on formatting questions for best results."""
     return _get_question_formatting()
 
+
+def _get_response_formatting() -> str:
+    """Get response formatting guidance content."""
+    return """# ICAET Response Formatting Guidelines
+
+When presenting results from ICAET query tool, follow these guidelines:
+
+**Structure Your Response:**
+
+1. **Acknowledge the Query** - Briefly confirm what was asked
+2. **Present Key Findings** - Highlight the most relevant information first
+3. **Provide Context** - Include speaker names, talk titles, or session details when available
+4. **Quote Directly** - Use actual quotes from the content when appropriate
+5. **Summarize Insights** - Distill actionable takeaways or key points
+
+**Formatting Best Practices:**
+
+✓ **Use Clear Headings** - Organize information into logical sections
+✓ **Bullet Points** - Break down complex information into digestible points
+✓ **Attribute Sources** - Mention speakers or sessions when referencing specific content
+✓ **Maintain Accuracy** - Only present information from the query results, don't extrapolate
+✓ **Highlight Actionability** - Emphasize practical recommendations or insights
+
+**Example Response Structure:**
+
+```
+Based on the ICAET knowledge base:
+
+## [Speaker Name]'s Perspective on [Topic]
+
+- Key Point 1: [Direct quote or paraphrased content]
+- Key Point 2: [Direct quote or paraphrased content]
+
+## Practical Recommendations
+
+1. [Actionable insight]
+2. [Actionable insight]
+
+## Additional Context
+
+[Any relevant supporting information]
+```
+
+**What to Avoid:**
+
+✗ Adding personal opinions or external knowledge
+✗ Making assumptions beyond the query results
+✗ Overwhelming users with unstructured data dumps
+✗ Presenting information without proper attribution
+
+**Goal:** Make ICAET content accessible, actionable, and easy to understand while maintaining accuracy."""
+
+
+@mcp.prompt()
+def response_formatting() -> str:
+    """Provide guidance on how to format and present ICAET query results."""
+    return _get_response_formatting()
+
